@@ -49,9 +49,16 @@ Test Median Elapsed Time and Median Memory w/
 
 ##Methodology
 'generate_map' was run once for an N size of 10, 20, 50, 100, 200, 500, and 1000. Each maped was saved to 'map(N).txt' and that file was then cleared and reused for all trails. The generator picks a random symbol for each cell and is seeded with 'srand(time(NULL))' so that generation of a map results in different sequences.
-This seeding idea was a result of debugging with Claude AI, as I realized my map of size 10 was resulting in the same map every run. While this wouldn't skew any gathered data due to the table representing one run of each size, it was something that I figured should be resolved. 
+This seeding idea was a result of debugging with Claude AI, as I realized my map of size 10 was resulting in the same map every run. This could potentially skew data if an unordinary map were to be generated as no 'true median' could be calculated. 
+Start was defined as the top left (0,0) while end was defined as bottom right (N-1 N-1). The median was calculated by running 5 trails for each N size. 
+
+##Limitations
+- Graph is stored using an adjacency list with 4 edges per cell. This uses more memory than simply generating neighbors as needed.
+- Input us assumed to be valid for 'generate_map' as no error checking was implemented.
+- Due to the seeding of the map being based off of time, if two maps of size N are generated at the same second they will be identical. 
 
 
 ## Reflection
 
-##Contrib
+##Contribution
+As U ga
