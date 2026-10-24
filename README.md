@@ -3,7 +3,7 @@ Name: Parker Babb
 
 ## Build / run instructions
 
-Both programs can be built with: 
+Both programs were built on the Hydra11 machine and can be built with: 
 
     make
 
@@ -47,12 +47,12 @@ Test Median Elapsed Time and Median Memory w/
 | 1000 | 1.82                          | 85596              |
 
 
-##Methodology
-'generate_map' was run once for an N size of 10, 20, 50, 100, 200, 500, and 1000. Each maped was saved to 'map(N).txt' and that file was then cleared and reused for all trails. The generator picks a random symbol for each cell and is seeded with 'srand(time(NULL))' so that generation of a map results in different sequences.
-This seeding idea was a result of debugging with Claude AI, as I realized my map of size 10 was resulting in the same map every run. This could potentially skew data if an unordinary map were to be generated as no 'true median' could be calculated. 
-Start was defined as the top left (0,0) while end was defined as bottom right (N-1 N-1). The median was calculated by running 5 trails for each N size. 
+## Methodology
+'generate_map' was run once for an N size of 10, 20, 50, 100, 200, 500, and 1000. Each mapped was saved to 'map(N).txt' and that file was then saved and reused for all trials. The generator picks a random symbol for each cell and is seeded with 'srand(time(NULL))' so that generation of a map results in different sequences.
+This seeding idea was a result of debugging with Claude AI, as I realized my map of size 10 was resulting in the same map every run. While the 5 trials were ran on the same map regardless, it ensured a new map was generated each time and was something that sparked my interest. 
+Start was defined as the top left (0,0) while end was defined as bottom right (N-1 N-1). The median was calculated by running 5 trials for each N size. 
 
-##Limitations
+## Limitations
 - Graph is stored using an adjacency list with 4 edges per cell. This uses more memory than simply generating neighbors as needed.
 - Input us assumed to be valid for 'generate_map' as no error checking was implemented.
 - Due to the seeding of the map being based off of time, if two maps of size N are generated at the same second they will be identical. 
@@ -60,7 +60,7 @@ Start was defined as the top left (0,0) while end was defined as bottom right (N
 
 ## Reflection
 
-##Contribution
+## Contribution
 As I had no partner for this project, the implementation of dijkstras.cpp and generate_map.cpp, benchmark running, and README were done by me. I used Claude AI and Geeks for Geeks to further understand the algorithm, help with graph-constructions issues, and debugging both dijkstras.cpp and generate_map.cpp. Used Claude to teach me about rand() and srand() in C++. 
 At the end, I asked Claude if my data looked reasonable and had it format the table of results. 
 
